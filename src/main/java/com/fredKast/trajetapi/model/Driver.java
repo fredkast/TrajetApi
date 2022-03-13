@@ -16,11 +16,7 @@ public class Driver {
 
     private String firstname;
 
-    // private Date createdAt;
     private String vector;
-
-    // @Enumerated(EnumType.STRING)
-    // private VectorType vector;
 
     public Driver(){  }
 
