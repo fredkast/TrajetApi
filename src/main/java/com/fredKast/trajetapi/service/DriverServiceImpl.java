@@ -38,7 +38,7 @@ public class DriverServiceImpl implements DriverService{
          // -- Update existing user informations
          existingDriverToUpdate.setName(driverDtoWithUpdate.getName());
          existingDriverToUpdate.setFirstname(driverDtoWithUpdate.getFirstname());
-         existingDriverToUpdate.setVector(driverDtoWithUpdate.getVector());
+        //  existingDriverToUpdate.setVector(driverDtoWithUpdate.getVector());
  
          // -- Update existing user in DB with new informations
          Optional<Driver> updateDriver = Optional.of(driverRepository.save(existingDriverToUpdate));

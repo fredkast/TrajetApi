@@ -2,6 +2,8 @@ package com.fredKast.trajetapi.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "drivers")  // Customiz of Table name
 
@@ -16,11 +18,18 @@ public class Driver {
 
     private String firstname;
 
-    private String vector;
+    // private String vector;
 
-    public Driver(){  }
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vector_id", nullable = false)
+    private Vector vector;
 
-    public Driver(long id, String name, String firstname, String vector){
+    public Driver(){ 
+
+     }
+
+    public Driver(long id, String name, String firstname, Vector vector){
         this.id = id;
         this.name = name;
         this.firstname = firstname;
@@ -50,11 +59,11 @@ public class Driver {
         this.firstname = firstname;
     }
 
-    public String getVector(){
+    public Vector getVector(){
         return vector;
     }
 
-    public void setVector(String vector) {
+    public void setVector(Vector vector) {
         this.vector = vector;
     }
 }

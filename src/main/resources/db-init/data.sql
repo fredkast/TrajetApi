@@ -1,4 +1,9 @@
-INSERT INTO DRIVERS (id, name, firstname, vector) VALUES (1, 'Castel', 'Frédéric', 'Auto');
-INSERT INTO DRIVERS (id, name, firstname, vector) VALUES (2, 'Castel', 'Frédéric', 'Moto');
+INSERT INTO VECTORS (id, name) VALUES (1, 'Auto');
 
-INSERT INTO RIDES (id, arrival, average_speed, date, duration, consumption, range, ride_style, start, driver_id) VALUES (1, 'Brest', '73', now(), '54', '5.9', '66', 'economique', 'Carantec', 1);
+INSERT INTO DRIVERS (id, name, firstname, vector_id) VALUES (1, 'Castel', 'Frédéric', 1);
+
+
+INSERT INTO RIDES (id, average_speed, date, consumption, range, trip, driver_id) VALUES (1, '73', now(), '5.9', '66', 'CARANTEC-BREST', 1);
+
+-- INSERT INTO CITIES (id, name) VALUES (1, 'BREST');
+-- INSERT INTO CITIES (id, name) VALUES (2, 'CARANTEC');

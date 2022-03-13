@@ -23,19 +23,14 @@ public class Ride {
 
     private Date date;
 
-    private String rideStyle;
-
-    private String start;
-
-    private String arrival;
+    @Enumerated(EnumType.STRING) 
+    private Trip trip;
 
     private String range;
 
     private String averageSpeed;
 
     private String consumption;
-
-    private String duration;
 
     public Ride(){
 

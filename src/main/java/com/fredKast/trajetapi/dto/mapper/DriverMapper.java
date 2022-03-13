@@ -10,7 +10,7 @@ public class DriverMapper {
         Driver driver = new Driver();
         driver.setName(driverDto.getName());
         driver.setFirstname(driverDto.getFirstname());
-        driver.setVector(driverDto.getVector());
+        // driver.setVector(driverDto.getVector());
         return driver;
     }
 }
