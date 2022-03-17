@@ -1,41 +1,27 @@
-package com.fredKast.trajetapi.model;
+package com.fredKast.trajetapi.dto.model;
 
 import java.sql.Date;
 
-import javax.persistence.*;
+import com.fredKast.trajetapi.model.Driver;
+import com.fredKast.trajetapi.model.Trip;
 
-import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-@Entity
-@Table(name = "rides")  // Customiz of Table name
-
-public class Ride {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "driver_id", nullable = false)
-    private Driver driver;
+public class RideDto {
 
     private Date date;
 
-    @Enumerated(EnumType.STRING) 
-    private Trip trip;
-
     private String range;
+
+    private Trip trip;
 
     private String averageSpeed;
 
     private String consumption;
 
-    public Ride(){
+    private long id;
 
-    }
-    public Ride(long id,Driver driver, Date date, Trip trip, String range, String averageSpeed, String consumption){
+    Driver driver;
+
+    public RideDto(long id, Driver driver, Date date, Trip trip, String range, String averageSpeed, String consumption){
         this.id = id;
         this.driver = driver;
         this.date = date;
@@ -44,6 +30,7 @@ public class Ride {
         this.averageSpeed = averageSpeed;
         this.consumption = consumption;
     }
+
     public long getId(){
         return id;
     }
@@ -92,4 +79,5 @@ public class Ride {
         this.consumption = consumption;
     }
 
+    
 }

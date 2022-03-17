@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "vectors")
+
 public class Vector {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +14,12 @@ public class Vector {
 
     public Vector(){
 
+    }
+
+    public Vector(long id, String name){
+        this.id = id;
+        this.name = name;
+   
     }
 
     public long getId() {
