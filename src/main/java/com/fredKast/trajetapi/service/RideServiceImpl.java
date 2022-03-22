@@ -36,11 +36,8 @@ public class RideServiceImpl implements RideService{
     @Override
     public Optional<Ride> update(Ride existingRideToUpdate, RideDto rideDtoWithUpdate) {
          // -- Update existing user informations
-         existingRideToUpdate.setDate(rideDtoWithUpdate.getDate());
          existingRideToUpdate.setTrip(rideDtoWithUpdate.getTrip());
-         existingRideToUpdate.setRange(rideDtoWithUpdate.getRange());
-         existingRideToUpdate.setAverageSpeed(rideDtoWithUpdate.getAverageSpeed());
-         existingRideToUpdate.setConsumption(rideDtoWithUpdate.getConsumption());
+        //  existingRideToUpdate.setDriver(rideDtoWithUpdate.getDriver());
  
          // -- Update existing user in DB with new informations
          Optional<Ride> updateRide = Optional.of(rideRepository.save(existingRideToUpdate));

@@ -16,17 +16,18 @@ public class VectorController {
     @Resource(name = "vectorService")
     private VectorService vectorService;
 
-    @GetMapping("/{id}") // HTTP request GET + /vector/id
-    public Vector get(@PathVariable long id) {
-        return vectorService.get(id).orElseThrow(() -> new RuntimeException("Vector not found : " + id));
-    }
-
     @GetMapping //HTTP request GET + /vectors/
     public List<Vector> getAll() {
         
         return vectorService.getAll();
         
     }
+
+    @GetMapping("/{id}") // HTTP request GET + /vector/id
+    public Vector get(@PathVariable long id) {
+        return vectorService.get(id).orElseThrow(() -> new RuntimeException("Vector not found : " + id));
+    }
+
     @PostMapping // HTTP request POST + /vectors/
     public Vector create(final @RequestBody VectorDto vector){
         return vectorService.create(vector).orElseThrow(() -> new RuntimeException("Something went wrong, please try later"));

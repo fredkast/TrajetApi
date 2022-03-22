@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
 
-// API request handler for Rides
+// API request handler for DRIVERS
 @RestController
 @RequestMapping("/rides")
 public class RideController {

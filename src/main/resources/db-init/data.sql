@@ -1,9 +1,16 @@
-INSERT INTO VECTORS (id, name) VALUES (1, 'Auto');
+-- DB init
 
-INSERT INTO DRIVERS (id, name, firstname, vector_id) VALUES (1, 'Castel', 'Frédéric', 1);
+-- Vectors DB tables
+INSERT INTO VECTORS (id, name) VALUES (1, 'CAR');
+INSERT INTO VECTORS (id, name) VALUES (2, 'MOTORCYCLE');
+INSERT INTO VECTORS (id, name) VALUES (3, 'BOAT');
 
+-- Drivers DB tables
+INSERT INTO DRIVERS (id, name, firstname, vector_id) VALUES (1, 'CASTEL', 'Frédéric', 1);
+INSERT INTO DRIVERS (id, name, firstname, vector_id) VALUES (2, 'DUBOIS', 'Magdalena', 2);
+INSERT INTO DRIVERS (id, name, firstname, vector_id) VALUES (3, 'DOE', 'John', 2);
 
-INSERT INTO RIDES (id, average_speed, date, consumption, range, trip, driver_id) VALUES (1, '73', now(), '5.9', '66', 'CARANTEC-BREST', 1);
-
-
-// IL FAUT FAIRE LE CRUD SUR RIDES ET VECTOR
+-- Rides DB tables
+INSERT INTO RIDES (id, trip, driver_id) VALUES (1, 'CARANTEC-BREST', 1);
+INSERT INTO RIDES (id, trip, driver_id) VALUES (2, 'PARIS-MORLAIX', 2);
+INSERT INTO RIDES (id, trip, driver_id) VALUES (3, 'BREST-NEW_YORK', 3);
